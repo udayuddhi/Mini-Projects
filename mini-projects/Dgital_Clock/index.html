@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Digital Clock</title>
+</head>
+<body onload="DigitalClock()">
+    <div class="box">
+        <div class="Date">
+            <span id="day">Day</span>,
+            <span id="month">Month</span>,
+            <span id="date">00</span>,
+            <span id="year">Year</span>
+
+        </div>
+        <div class="time">
+            <span id="hours">00</span>:
+            <span id="minutes">00</span>:
+            <span id="seconds">00</span>
+            <span id="AM-PM">AM</span>
+        </div>
+    </div>
+
+    <script>
+        function clock(){
+            var now = new Date();
+            var dayName = now.getDay(),
+
+            M= now.getMonth(),
+
+            D =now.getDate(),
+
+            y= now.getFullYear(),
+
+            hr =now.getHours(), 
+            min = now.getMinutes(),
+
+            sec =now.getSeconds(),
+
+           AmPm= "AM";
+           
+           if (hr == 0){
+            hr == 12;
+           }
+           if(hr> 12){
+            hr = hr-12;
+            AmPm = "PM"
+           }
+
+          
+
+           var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+           var week = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+           var ids = ["day","month","date","year","hours","minutes","seconds","AM-PM"]
+           var values = [week[dayName],months[M],D,y,hr,min,sec,AmPm];
+
+           for( var i = 0 ; i <ids.length;i++){
+           document.getElementById(ids[i]).firstChild.nodeValue=values[i]
+
+
+           }
+        }
+
+        function DigitalClock(){
+            clock();
+            window.setInterval('clock()',1)
+        }
+
+    </script>
+
+    
+</body>
+</html>

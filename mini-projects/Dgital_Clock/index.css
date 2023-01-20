@@ -1,0 +1,61 @@
+*{
+
+    margin: 0;
+    padding: 0;
+
+}
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(rgb(0, 110, 255) ,rgb(54, 53, 53));
+}
+
+.box{
+    background: rgba(244, 240, 240,0.3);
+    width: 450px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 20px;
+    box-shadow: 5px 5px 10px;
+    transition: 0.5s;
+    
+
+}
+
+.box:hover{
+    width: 500px;
+    height: 200px;
+    background: linear-gradient(to right,rgba(255, 0, 251,0.5),rgba(255, 0, 132, 0.5));
+    box-shadow: 0 0 50px rgb(255, 0, 251);
+    border-radius: 40px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+ 
+.box .Date{
+    margin-bottom: 10px;
+    font-size: 30px;
+    font-weight: 600;
+    font-family: sans-serif;
+    transition: 0.3s;
+
+}
+.box:hover .Date{
+    font-size: 15px;
+}
+.box .time{
+    margin-bottom: 10px;
+    font-size: 20px;
+    font-weight: 600; 
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    transition: 0.3s;
+}
+.box:hover .time{
+    font-size: 55px;
+    letter-spacing: 3px;
+}
